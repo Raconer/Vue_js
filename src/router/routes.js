@@ -1,21 +1,37 @@
 
 const router = [
     {
-        path : "/",
-        name: "HelloWorld",
-        component : () => import('@/views/HelloWorld.vue')
-    },
-    {
-        path : "/",
-        component: () => import('@/views/editor/EditorVue.vue'),
-        children : [
+        path : "",
+        component: () => import('@/components/layout/CenterLayout'),
+        children: [
             {
-                path: '/editor/toast',
-                name: 'ToastEditor',
-                component: () => import('@/components/form/editor/toast/ToastModule.vue')
+                path: "/",
+                name: "HelloWorld",
+                components: {
+                    default : () => import('@/components/HelloWorld.vue')
+                }
+            },
+            {
+                path: 'editor',
+                redirect : "/editor/toast",
+                components: {
+                    header : () => import('@/components/header/DefHeader.vue'),
+                    default: () => import('@/views/editor/EditorView.vue'),
+                    footer : () => import('@/components/common/footer/DefFooter.vue')
+                },
+                children: [
+                    {
+                        path : "toast",
+                        name: "ToastEditorView",
+                        components : {
+                         
+                            default : () => import('@/components/form/editor/toast/ToastModule.vue')
+                        }
+                    }
+                ]
             },
         ]
-    }
+    },
 ];
 
 export default router;

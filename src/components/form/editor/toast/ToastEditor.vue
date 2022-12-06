@@ -7,7 +7,6 @@
     initialEditType="wysiwyg"
     previewStyle="vertical"
   />
-    
 </template>
 
 <script>

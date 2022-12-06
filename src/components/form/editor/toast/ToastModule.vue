@@ -1,5 +1,6 @@
 <template>
     <div>
+        에디터 테스트
         <toast-editor :markDown="text" />
     </div>
 </template>
