@@ -1,24 +1,12 @@
-# vue_js
+# Vue_Js
 
-## Project setup
-```
-npm install
-```
+> Vue.js 사용법 및 모듈 적용
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 참고
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. Vuex -> pinia
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 사용 NPM
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. toast-ui/vue-editor
+2. pinia
