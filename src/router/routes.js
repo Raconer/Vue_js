@@ -24,7 +24,6 @@ const router = [
                         path : "toast",
                         name: "ToastEditorView",
                         components : {
-                         
                             default : () => import('@/components/form/editor/toast/ToastModule.vue')
                         }
                     }

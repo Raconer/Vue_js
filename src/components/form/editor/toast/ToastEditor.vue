@@ -6,6 +6,7 @@
      height="500px"
     initialEditType="wysiwyg"
     previewStyle="vertical"
+    @change="changeValue"
   />
 </template>
 
