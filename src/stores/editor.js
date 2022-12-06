@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const editorStore = defineStore("editor",{
     state: () => ({
-        value : "test"
+        value : ""
     }),
     actions: {
         setValue(param) { 
