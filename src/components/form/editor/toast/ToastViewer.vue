@@ -15,13 +15,13 @@ export default {
         Viewer
     },
     props : {
-        text : {
+        value : {
             type : String,
             default : ""
         }
     },
     watch : {
-        text : {
+        value : {
             immediate : true,
             handler(param){
                 if(this.$refs.viewer){

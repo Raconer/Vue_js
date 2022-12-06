@@ -1,7 +1,7 @@
 <template>
   <Editor 
     ref="editor"
-    :initialValue = "text"
+    :initialValue="value"
     :options="options"
      height="500px"
     initialEditType="wysiwyg"
@@ -23,7 +23,7 @@ export default {
     Editor
   },
   props:{
-    text : {
+    value : {
       type : String,
       default : ""
     }
@@ -48,10 +48,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions(editorStore, ["setState"]),
+    ...mapActions(editorStore, ["setValue"]),
     changeValue(){
-      let value = this.$refs.editor.invoke("getMarkdown");
-      this.setState(value);
+      let markdown = this.$refs.editor.invoke("getMarkdown");
+      this.setValue(markdown);
     }
   },
 }

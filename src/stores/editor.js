@@ -2,16 +2,16 @@ import { defineStore } from "pinia";
 
 export const editorStore = defineStore("editor",{
     state: () => ({
-        text : "tetxt"
+        value : "test"
     }),
     actions: {
-        setState(param) { 
-            this.text = param;
+        setValue(param) { 
+            this.value = param;
         }
     },
     getters: {
-        getState(state) { 
-            return state.text;
+        getValue(state) { 
+            return state.value;
         }
     }
 });

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <toast-viewer :text="text" />
-        <toast-editor :markDown="text" />
+        <toast-viewer :value="value" />
+        <toast-editor :value="value" />
     </div>
 </template>
 <script>
@@ -15,7 +15,7 @@ export default {
     components: { ToastViewer, ToastEditor },
     name : "ToastModule",
     computed : {
-        ...mapState(editorStore, ["text"])
+        ...mapState(editorStore, ["value"])
     }
 }
 </script>
