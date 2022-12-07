@@ -1,27 +1,20 @@
 <template>
-  <Editor 
+  <t-editor 
     ref="editor"
     :initialValue="value"
     :options="options"
-     height="500px"
-    initialEditType="wysiwyg"
+     height="1000px"
     previewStyle="vertical"
     @change="changeValue"
   />
 </template>
 
 <script>
-
-import '@toast-ui/editor/dist/toastui-editor.css';
-import { Editor } from '@toast-ui/vue-editor';
 import { mapActions } from 'pinia';
 import { editorStore } from '@/stores/editor';
-
+import plugins from "@/utils/editorPlugins";
 export default {
   name : "ToastEditor",
-  components:{
-    Editor
-  },
   props:{
     value : {
       type : String,
@@ -31,11 +24,11 @@ export default {
   data(){
     return {
       options : {
-        minHeight: '200px',
+        minHeight: '500px',
         language: 'en-US',
         useCommandShortcut: true,
         usageStatistics: true,
-        hideModeSwitch: false,
+        hideModeSwitch: true,
         toolbarItems: [
           ['heading', 'bold', 'italic', 'strike'],
           ['hr', 'quote'],
@@ -43,7 +36,8 @@ export default {
           ['table', 'image', 'link'],
           ['code', 'codeblock'],
           ['scrollSync'],
-        ]
+        ],
+        plugins: plugins
       }
     }
   },
@@ -56,7 +50,7 @@ export default {
   },
 }
 </script>
-
-<style>
-
+<style scoped>
+  @import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
+  @import 'prismjs/themes/prism.min.css';
 </style>

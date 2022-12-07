@@ -1,23 +1,28 @@
 <template>
-    <viewer
+   <div>
+     <t-viewer
         ref="viewer"
         height="500px"
+        :options="options"
     />
+   </div>
 </template>
 <script>
-
-import '@toast-ui/editor/dist/toastui-editor-viewer.css';
-import {Viewer} from "@toast-ui/vue-editor";
+import plugins from "@/utils/editorPlugins";
 
 export default {
     name : "ToastViewer",
-    components : {
-        Viewer
-    },
     props : {
         value : {
             type : String,
             default : ""
+        }
+    },
+    data(){
+        return{
+            options : {
+                plugins: plugins
+            }
         }
     },
     watch : {
