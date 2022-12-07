@@ -37,3 +37,7 @@ export default {
     }
 }
 </script>
+<style scoped>
+  @import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
+  @import 'prismjs/themes/prism.min.css';
+</style>
